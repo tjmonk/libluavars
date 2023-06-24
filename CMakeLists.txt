@@ -7,8 +7,6 @@ project(luavars
 
 include(GNUInstallDirs)
 
-find_library( LIB_VARSERVER varserver REQUIRED )
-
 add_library( ${PROJECT_NAME} SHARED
 	src/libluavars.c
 )
@@ -16,7 +14,7 @@ add_library( ${PROJECT_NAME} SHARED
 target_link_libraries( ${PROJECT_NAME}
 	dl
 	rt
-	${LIB_VARSERVER}
+	varserver
 )
 
 set_target_properties( ${PROJECT_NAME} PROPERTIES
