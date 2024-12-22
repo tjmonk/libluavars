@@ -7,6 +7,9 @@ project(luavars
 
 include(GNUInstallDirs)
 
+find_package( Lua REQUIRED )
+include_directories(/usr/local/include ${LUA_INCLUDE_DIR})
+
 add_library( ${PROJECT_NAME} SHARED
 	src/libluavars.c
 )
